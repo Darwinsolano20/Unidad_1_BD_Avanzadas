@@ -1,0 +1,24 @@
+//creamos la coleccion torneo
+>db.createCollection("torneo")
+
+//insertamos la fecha de inicio y fecha fin del torneo
+db.torneo.insert({"fechaInicio": "01/02/2022", "fechaFin": "19/03/2022"})
+
+//inscribimos el equipo Chicago Bulls
+db.equipos.insert({"nombreEquipo": "Chicago Bulls","ciudad": "Cartagena","nombreJugadores": ["Juan","Carlos","Camilo","Fabian","Jorge"]})
+
+//actualizamos la informacion del equipo Chicago Bulls
+db.equipos.update({nombreEquipo:"Chicago Bulls"},{$set: {ciudad:"Ibague"}},{nombreJugadores: ["Sergio","Carlos","Camilo","Sandro","Jorge"]})
+
+//eliminamos el equipo Chicago Bulls
+db.equipos.remove({"nombreEquipo" : "Chicago Bulls"});
+
+//inscribimos deportistas a un equipo
+db.deportistas.insert({"nombres":"Kevin","apellidos":"Restrepo","numeroCedula":0000,"edad":22,"ciudad":"Medellin","nombreEquipo":"Dallas"})
+
+//actualizamos informacion de los deportistas
+db.deportistas.update({nombres: "Kevin", apellidos: "Restrepo",edad:22,ciudad:"Medellin",nombreEquipo:"Dallas"},{$set: {numeroCedula: 55555}})
+
+//eliminamos deportistas de los equipos
+db.equipos.remove({"nombres":"Kevin", "apellidos":"Restrepo","numeroCedula": "55555"});
+
