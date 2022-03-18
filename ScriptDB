@@ -1,0 +1,51 @@
+//crear base de datos:
+>use torneoBasketball
+//ejecutamos el siguiente comando en Mongo Shell para ver la base de datos actualmente en uso:
+>db
+//crear colecciones: 
+db.createCollection("deportistas")
+db.createCollection("equipos")
+db.createCollection("tablaPosiciones")
+db.createCollection("arbitros")
+db.createCollection("encuentros")
+db.createCollection("entrenadores")
+
+//insertamos la informacion de los deportistas en su respectiva coleccion:
+>db.deportistas.insert({"nombres":"Darwin","apellidos":"Solano","numeroCedula":1234,"edad":25,"ciudad":"Bogota","nombreEquipo":"Lakers"})
+>db.deportistas.insert({"nombres":"Juan Camilo","apellidos":"Torres Perez","numeroCedula":4321,"edad":23,"ciudad":"Bogota","nombreEquipo":"Lakers"})
+>db.deportistas.insert({"nombres":"Sebastian","apellidos":"Guzman","numeroCedula":9876,"edad":24,"ciudad":"Bogota","nombreEquipo":"Lakers"})
+>db.deportistas.insert({"nombres":"Kevin","apellidos":"Perez","numeroCedula":7657,"edad":25,"ciudad":"Bogota","nombreEquipo":"Lakers"})
+>db.deportistas.insert({"nombres":"Pepito","apellidos":"Perez","numeroCedula":6782,"edad":22,"ciudad":"Bogota","nombreEquipo":"Lakers"})
+
+>db.deportistas.insert({"nombres":"Jose","apellidos":"Pelaez","numeroCedula":9831,"edad":25,"ciudad":"Cali","nombreEquipo":"Celtics"})
+>db.deportistas.insert({"nombres":"Mauricio","apellidos":"Aguirre","numeroCedula":6518,"edad":24,"ciudad":"Cali","nombreEquipo":"Celtics"})
+>db.deportistas.insert({"nombres":"Cristian","apellidos":"Jimenez","numeroCedula":6742,"edad":23,"ciudad":"Cali","nombreEquipo":"Celtics"})
+>db.deportistas.insert({"nombres":"Manuel","apellidos":"Alonso","numeroCedula":2109,"edad":22,"ciudad":"Cali","nombreEquipo":"Celtics"})
+>db.deportistas.insert({"nombres":"Samuel","apellidos":"Cortez","numeroCedula":1094,"edad":22,"ciudad":"Cali","nombreEquipo":"Celtics"})
+
+>db.deportistas.insert({"nombres":"Humberto","apellidos":"Guzman","numeroCedula":1111,"edad":25,"ciudad":"Medellin","nombreEquipo":"Dallas"})
+>db.deportistas.insert({"nombres":"Luis","apellidos":"Suarez","numeroCedula":2222,"edad":20,"ciudad":"Medellin","nombreEquipo":"Dallas"})
+>db.deportistas.insert({"nombres":"Andres","apellidos":"Guzman","numeroCedula":3333,"edad":22,"ciudad":"Medellin","nombreEquipo":"Dallas"})
+>db.deportistas.insert({"nombres":"Jose","apellidos":"Gonzales","numeroCedula":4444,"edad":25,"ciudad":"Medellin","nombreEquipo":"Dallas"})
+>db.deportistas.insert({"nombres":"Pedro","apellidos":"Fonseca","numeroCedula":5555,"edad":19,"ciudad":"Medellin","nombreEquipo":"Dallas"})
+
+>db.deportistas.insert({"nombres":"Nelson","apellidos":"Lopez","numeroCedula":6666,"edad":20,"ciudad":"Barranquilla","nombreEquipo":"Atlanta"})
+>db.deportistas.insert({"nombres":"Manuel","apellidos":"Ruiz","numeroCedula":7777,"edad":21,"ciudad":"Barranquilla","nombreEquipo":"Atlanta"})
+>db.deportistas.insert({"nombres":"Cesar","apellidos":"Alvarez","numeroCedula":8888,"edad":21,"ciudad":"Barranquilla","nombreEquipo":"Atlanta"})
+>db.deportistas.insert({"nombres":"Sergio","apellidos":"Aguirre","numeroCedula":9999,"edad":23,"ciudad":"Barranquilla","nombreEquipo":"Atlanta"})
+>db.deportistas.insert({"nombres":"Johan","apellidos":"Saldaña","numeroCedula":1010,"edad":23,"ciudad":"Barranquilla","nombreEquipo":"Atlanta"})
+
+//insertamos la informacion de los equipos en su respectiva coleccion:
+>db.equipos.insert({"nombreEquipo": "Lakers","ciudad": "Bogota", "nombreJugadores": ["Darwin","Juan Camilo","Sebastian","Kevin","Pepito"]})
+>db.equipos.insert({"nombreEquipo": "Celtics","ciudad": "Cali", "nombreJugadores": ["Jose","Mauricio","Cristian","Manuel","Samuel"]})
+>db.equipos.insert({"nombreEquipo": "Dallas","ciudad": "Medellin", "nombreJugadores": ["Humberto","Luis","Andres","Jose","Pedro"]})
+>db.equipos.insert({"nombreEquipo": "Atlanta","ciudad": "Barranquilla","nombreJugadores": ["Nelson","Manuel","Cesar","Sergio","Johan"]})
+>db.equipos.insert({"nombreEquipo": "Chicago Bulls","ciudad": "Cartagena","nombreJugadores": ["Juan","Carlos","Camilo","Fabian","Jorge"]})
+db.equipos.update({nombreEquipo:"Chicago Bulls"},{$set: {ciudad:"Ibague"},{nombreJugadores: ["Sergio","Carlos","Camilo","Sandro","Jorge"]}) 
+
+
+//insertamos la informacion de la tabla de posiciones en su respectiva coleccion:
+>db.tablaPosiciones.insert({"posicion": 1, "equipo": "Celtics", "victorias": 1, "empates": "0", "patidosJugados":"1","derrotas":0,"puntos": 5})
+>db.tablaPosiciones.insert({"posicion": 2, "equipo": "Lakers", "victorias": 1, "empates": "0", "patidosJugados":"1","derrotas":0,"puntos": 5})
+>db.tablaPosiciones.insert({"posicion": 3, "equipo": "Dallas", "victorias": 0, "empates": "0", "patidosJugados":"1","derrotas":0,"puntos": 0})
+>db.tablaPosiciones.insert({"posicion": 4, "equipo": "Atlanta", "victorias": 0, "empates": "0", "patidosJugados":"1","derrotas":1,"puntos": 0})
