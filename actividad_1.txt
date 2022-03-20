@@ -1,0 +1,16 @@
+//insertamos la informacion de los arbitros en su respectiva coleccion:
+
+>db.arbitros.insert({"nombres":"Franco","apellidos":"Lopez","numeroCedula":0000,"edad":25,"ciudad":"Bogota"})
+>db.arbitros.insert({"nombres":"Misael","apellidos":"Reyes","numeroCedula":9999,"edad":40,"ciudad":"Bogota"})
+>db.arbitros.insert({"nombres":"Andrea","apellidos":"Perez Guzman","numeroCedula":8888,"edad":36,"ciudad":"Bogota"})
+
+//insertamos la información de los encuentros en su respectiva colección:
+>db.encuentros.insert({"fecha":"01/02/2022","hora":"8:00 pm","lugar":"Academia De Baloncesto Kangoo","equipoVisitante":"Celtics","equipoLocal":"Dallas", "estado":"jugado", "resultadoFinal":"Gana equipo Celtics","arbitros": ["Franco Lopez", "Andrea Perez Guzman"]})
+>db.encuentros.insert({"fecha":"22/01/2022","hora":"5:00 pm","lugar":"Polideportivo calletano cañisales","equipoVisitante":"Atlanta","equipoLocal":"Lakers", "estado":"jugado", "resultadoFinal":"Gana equipo Lakers","arbitros": ["Misael Reyes", "Franco Lopez"]})
+
+//insertamos la información de los entrenadores en su respectiva colección:
+
+>db.entrenadores.insert({"nombres": "Juanito", "Apellidos": "Aguirre", "numeroCedula": 3212, "edad": 40, "ciudad": "Bogota", "Cel": 12345, "equipo": "Lakers"})
+>db.entrenadores.insert({"nombres": "Felipe", "Apellidos": "Alonso", "numeroCedula": 6854, "edad": 35, "ciudad": "Bogota", "Cel": 97458, "equipo": "Celtics"})
+>db.entrenadores.insert({"nombres": "Diego", "Apellidos": "Malagon", "numeroCedula": 7931, "edad": 30, "ciudad": "Bogota", "Cel": 346786, "equipo": "Atlanta"})
+>db.entrenadores.insert({"nombres": "Sebastian", "Apellidos": "Molina", "numeroCedula": 3212, "edad": 45, "ciudad": "Bogota", "Cel": 299364, "equipo": "Dallas"})

@@ -1,0 +1,16 @@
+//Creamos encuentro deportivo
+db.encuentros.insert({"fecha":"15/03/2022","hora":"5:00 pm","lugar":"Parque Simon Bolivar","equipoVisitante":"Lakers","equipoLocal":"Celtics", "estado":"jugado", "resultadoFinal":"Gana equipo Lakers","arbitros": ["Misael Reyes", "Andrea Perez Guzman"]})
+
+//Modificamos la hora, fecha, estado, y resultado final del encuentro deportivo:
+ db.encuentros.updateOne({_id:ObjectId('622d14c73f71c2211a3689d8')}, {$set: {"hora":"2:00 pm","fecha":"20/03/2022","estado":"por definir","resultadoFinal":"pendiente"}})
+
+//eliminamos encuentro deportivo
+db.encuentros.remove({"lugar":"Parque Simon Bolivar","fecha":"20/03/2022", "hora": "2:00 pm", "estado": "por definir"});
+
+//Actualizamos el puntaje del equipo ganador:
+db.tablaPosiciones.updateOne({_id:ObjectId('622256f6bed33f44d4b246c5')}, {$set: {"victorias":"2","posicion":"1","puntos":10}})
+db.tablaPosiciones.updateOne({_id:ObjectId('622256eebed33f44d4b246c4')}, {$set: {"victorias":"1","posicion":"2","puntos":5}})
+
+//Resultado final Gana equipo Lakers con 10 puntos:
+db.tablaPosiciones.find().pretty()
+
